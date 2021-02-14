@@ -1,0 +1,178 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(243, 243, 243);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+/*Display:flex; ( independente das suas dimensões eles 
+sempre manterão um layout flexível dentro do seu elemento pai
+reorganizando-se e acordo com a necessidade.)*/
+/*Align-items:center; (Alinhamento vertical, eixo Y, centralizado)*/
+/*Justify-content:center; (Alinhamento horizontal, eixo X, centralizado)*/
+/*(justify-content)
+space-everly coloca espaço nos lados e entre os elementos
+space-around aumenta o espaço entre os elementos, sem aumentar os dois lados
+space-between zera os espaços laterais e aumenta o espaço entre elementos*/
+
+.instagram-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 60%;
+    height: 100vh;
+    /*A medida vh é igual a 1/100
+     da altura da viewport. Então, por 
+     exemplo, se a altura do navegador
+     é 900px , 1vh equivale a 9px e,
+     analogamente, se a largura da 
+     viewport é 750px , 1vw equivale a 7.5px */
+}
+
+.instagram-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.instagram-phone img{
+    height: 45rem;
+    transition: 0.5s;
+}
+.instagram-phone img:hover{
+    margin-right: -10px;
+    opacity: 90%;
+}
+
+.instagram-continue{
+    display:flex;
+    align-items: center; /*Se tornou horizontal devido ao
+                            flex-direction:column;*/
+    justify-content: space-around; /*Se tornou vertical*/
+    flex-direction: column; /*Causou um girar nas propriedades
+                            acima*/
+    width: 50% ;
+    min-height: 34rem;
+}
+
+.group {
+    display:flex;
+    justify-content: space-between;/*vertical*/
+    align-items: center;/*Horizontal*/
+    flex-direction: column; 
+    background-color: #ffffff;
+    width: 100%;
+    padding: 1.3rem 0;
+    border: 1px solid lightgray;
+}
+
+/*Seleciona os filhos do elemento Pai*/
+/*o número 1 refere-se ao primeiro filho, em ordem*/
+.group:nth-child(1) {
+    min-height: 19rem;
+
+}
+
+.instagram-logo {
+    height: 3rem;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:  50%;
+    overflow:hidden;
+}
+
+.profile-photo img{
+    height: 6rem;
+
+}
+
+.instagram-login{
+    background-color: #0095f6;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.instagram-logout {
+    color: #0095f6;
+    margin-top: 1rem;
+}
+
+.not-account {
+    color: rgb(160, 160, 160);
+}
+
+.link-blue{
+    cursor: pointer;
+    color:#0095f6;
+}
+
+.get-the-app{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1.3rem 0;
+}
+
+.download {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    /*O rem é equivalente á 16px.
+    1.25rem seria 20px*/
+}
+
+.app-download {
+    height: 3rem;
+    width: 10rem;
+    background-size: cover;
+}
+.app-download:nth-child(1){
+    background-image: url("./img/appstore.png");
+}
+.app-download:nth-child(2){
+    background-image: url("./img/gplay.png");
+}
+
+@media (max-width: 1250px){
+    .instagram-wrapper{
+        width: 90%;
+    }
+}
+@media (max-width: 650px){
+    body {
+        background-color: #ffffff;
+    }
+    .instagram-wrapper{
+        width: 90%;
+    }
+    .instagram-phone{
+        display: none;
+    }
+    .instagram-continue{
+        width: 100%;
+    }
+    .group{
+        border: 1px solid transparent;
+    }
+}
